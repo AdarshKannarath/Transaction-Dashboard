@@ -25,7 +25,7 @@ function App() {
 
   const [chartData, setChartData] = useState({ labels: [], datasets: [] });
   const [pieChartData, setPieChartData] = useState({ labels: [], datasets: [] });
-
+  axios.defaults.withCredentials=true
   const months = [
     "January", "February", "March", "April", "May",
     "June", "July", "August", "September", "October",
