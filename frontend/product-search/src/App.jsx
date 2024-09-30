@@ -40,7 +40,7 @@ function App() {
       setError(null);
       try {
         const res = await axios.get(
-          `http://localhost:3000/transactions?month=${month}&search=${searchQuery}&page=${page}&perPage=${perPage}`
+          `https://transaction-dashboard-tn2r.vercel.app/transactions?month=${month}&search=${searchQuery}&page=${page}&perPage=${perPage}`
         );
         setProducts(res.data.data);
         setTotalPages(res.data.totalPages);
@@ -70,7 +70,7 @@ function App() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/statistics?month=${month}`);
+        const res = await axios.get(`https://transaction-dashboard-tn2r.vercel.app/statistics?month=${month}`);
         setStats(res.data);
       } catch (error) {
         console.error("Error fetching statistics:", error);
@@ -83,7 +83,7 @@ function App() {
   useEffect(() => {
     const fetchBarChartData = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/barchart?month=${month}`);
+        const res = await axios.get(`https://transaction-dashboard-tn2r.vercel.app/barchart?month=${month}`);
         setChartData(res.data);
       } catch (error) {
         console.error("Error fetching bar chart data:", error);
@@ -96,7 +96,7 @@ function App() {
   useEffect(() => {
     const fetchPieChartData = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/piechart?month=${month}`);
+        const res = await axios.get(`https://transaction-dashboard-tn2r.vercel.app/piechart?month=${month}`);
         if (res.data && res.data.length > 0) {
           setPieChartData(res.data);
           setPieChartError(null);
