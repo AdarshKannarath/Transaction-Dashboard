@@ -4,7 +4,11 @@ import mongoose from 'mongoose';
 import cors from "cors";
 import dotenv from 'dotenv';
 const app = express();
-app.use(cors());
+app.use(cors({
+        origin:[""],
+        methods:["GET","POST", "PUT", "DELETE"],
+        credentials:true
+    }));
 dotenv.config();
 mongoose.connect(process.env.MONGO_URL);
 
