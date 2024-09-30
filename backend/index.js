@@ -5,7 +5,7 @@ import cors from "cors";
 import dotenv from 'dotenv';
 const app = express();
 app.use(cors({
-        origin:[""],
+        origin:["https://transaction-dashboard-front.vercel.app/"],
         methods:["GET","POST", "PUT", "DELETE"],
         credentials:true
     }));
